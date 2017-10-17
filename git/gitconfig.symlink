@@ -1,6 +1,13 @@
+[include]
+    path = .gitconfig.credentials
+
+[credential]
+    helper = osxkeychain
+
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
     lg = log -n 20 --graph --abbrev-commit --date=relative --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s - %Cblue%an%Creset %Cgreen(%ad)%Creset'
+	s = status -s
 
 [color]
 

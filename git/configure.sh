@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # Install latest version of git
-brew install git
+if ! brew ls --versions git > /dev/null; then
+    brew install git
+else
+    brew upgrade git
+fi
 
 # Get full name of the OSX user (cheers @juandebravo!)
 username=`whoami`
@@ -13,7 +17,7 @@ read -p "Enter your git email: " git_email
 
 git_name=${git_name:-$default_git_name}
 
-echo "[user]" >> ~/.gitconfig.credentials
+echo "[user]" > ~/.gitconfig.credentials
 echo "    name = $git_name" >> ~/.gitconfig.credentials
 echo "    email = $git_email" >> ~/.gitconfig.credentials
 
