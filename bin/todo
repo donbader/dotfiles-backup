@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+function usage() { echo "Usage: $0 title details"; }
+
+[ -z $1 ] && usage && exit 1
+
+path=~/Desktop
+file=$path/"___$1___.txt"
+
+echo [`date "+%Y-%m-%d %H:%M:%S"`] >> $file
+printf "\t\t$2\n\n" >> $file
+
+
