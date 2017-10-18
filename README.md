@@ -14,6 +14,8 @@ $ curl https://raw.githubusercontent.com/caiogondim/bullet-train.zsh/master/bull
 
 
 ## Todo
+- [ ] Vim configuration
+- [ ] iTerm2 configuration
+- [ ] MacOs settings configuration
 - [ ] Make `backup.sh` to backup original dotfiles
 - [ ] Make `restore.sh` to restore
-- [ ] Complete all the configurations

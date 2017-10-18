@@ -10,6 +10,8 @@ echo "source `pwd`/$(dirname $0)/main.zsh" >> ~/.zshrc
 # Create basic folders
 mkdir -p ~/bin
 mkdir -p ~/tmp
-
 mkdir -p ~/Documents/bin
 mkdir -p ~/Documents/work
+
+# update all submodules
+git submodule foreach --recursive git pull origin master
