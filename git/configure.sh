@@ -21,5 +21,5 @@ echo "[user]" > ~/.gitconfig.credentials
 echo "    name = $git_name" >> ~/.gitconfig.credentials
 echo "    email = $git_email" >> ~/.gitconfig.credentials
 
-ln -s "`pwd`/$(dirname $0)/gitconfig.symlink" ~/.gitconfig
-ln -s "`pwd`/$(dirname $0)/gitignore.symlink" ~/.gitignore
+ln -sf "`pwd`/$(dirname $0)/gitconfig.symlink" ~/.gitconfig
+ln -sf "`pwd`/$(dirname $0)/gitignore.symlink" ~/.gitignore

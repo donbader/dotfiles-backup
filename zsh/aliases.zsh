@@ -44,3 +44,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Remove .DS_Store recursively
+alias rmds='find . -name ‘*.DS_Store’ -type f -delete'
+
+# re-source ~/.zshrc
+alias reloadrc='source ~/.zshrc'

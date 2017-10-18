@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-ln -s "`pwd`/$(dirname $0)/tmux.conf.symlink" ~/.tmux.conf
+ln -sf "`pwd`/$(dirname $0)/tmux.conf.symlink" ~/.tmux.conf
