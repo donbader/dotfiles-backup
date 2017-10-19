@@ -10,3 +10,7 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
+# vim swap files
+*.swp
+
+

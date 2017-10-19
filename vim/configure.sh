@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ln -s "`pwd`/$(dirname $0)/vimrc.symlink" ~/.vimrc
+ln -sf "`pwd`/$(dirname $0)/vimrc.symlink" ~/.vimrc
 
 mkdir -p ~/.vim/autoload
 mkdir -p ~/.vim/bundle
