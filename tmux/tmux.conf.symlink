@@ -8,12 +8,13 @@ set -g prefix `
 bind ` send-prefix
 
 # Split panes using | and -
-bind | split-window -h
-bind - split-window -v
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 unbind '"'
 unbind %
 
 # Easy config reloads
+unbind r
 bind r source-file ~/.tmux.conf
 
 # Switch panes using Alt-arrow without prefix (M == Meta)
@@ -31,8 +32,6 @@ set-option -g allow-rename off
 ######################
 ### DESIGN CHANGES ###
 ######################
-
-
 # panes
 set -g pane-border-fg black
 set -g pane-active-border-fg brightred

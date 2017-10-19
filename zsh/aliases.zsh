@@ -6,6 +6,10 @@ alias sl=ls
 alias d='dirs -v | head -10'
 alias cls='clear'
 
+# Custom functions
+(! declare -f cdandls > /dev/null ) && cdandls(){ cd $1 && ls; } && alias cd="cdandls"
+
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -46,7 +50,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias path='echo -e ${PATH//:/\\n}'
 
 # Remove .DS_Store recursively
-alias rmds='find . -name ‘*.DS_Store’ -type f -delete'
+alias rmds='find . -name ‘.DS_Store’ -type f -delete'
 
 # re-source ~/.zshrc
 alias reloadrc='source ~/.zshrc'

@@ -1,6 +1,6 @@
 # Run tmux if exists
 if brew ls --versions tmux > /dev/null; then
-	[ -z $TMUX ] && exec tmux
+	[ -z $TMUX ] && exec tmux && echo "Launched tmux"
 else
     echo "tmux isn't installed. (brew install tmux) "
 fi
@@ -19,14 +19,18 @@ ZSH_THEME=""
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# For bullet-train prompt custom segments
-# See https://github.com/caiogondim/bullet-train.zsh#prompt
-
-# hide context user@hostname
-export BULLETTRAIN_CONTEXT_DEFAULT_USER=`whoami`
 
 # Welcome Message
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 echo "Get your ass out of the ${RED}fucking comfort zone${NC}!!"
 
+
+# powerlevel9k config
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_left"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=5
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{white}\u256D\u2500%f'
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%F{white}\u2570>>>%f'
