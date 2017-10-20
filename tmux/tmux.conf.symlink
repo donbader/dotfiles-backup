@@ -1,6 +1,15 @@
+# Enable mouse mode (tmux 2.1 and above)
+set -g mouse on
+
+# don't rename windows automatically
+set-option -g allow-rename off
+
 ######################
 ###  KEY BINDINGS  ###
 ######################
+
+#NVIM optimization
+set-option -sg escape-time 10
 
 # Prefix
 unbind C-b
@@ -17,18 +26,21 @@ unbind %
 unbind r
 bind r source-file ~/.tmux.conf
 
-# Switch panes using Alt-arrow without prefix (M == Meta)
+# Switch panes using Alt-arrow without prefix (S == shift)
 bind -n S-Left select-pane -L
 bind -n S-Right select-pane -R
 bind -n S-Up select-pane -U
 bind -n S-Down select-pane -D
 
-# Enable mouse mode (tmux 2.1 and above)
-set -g mouse on
+unbind [
+bind Escape copy-mode
+unbind p
+bind p paste-buffer
+bind-key -T copy-mode-vi 'v' send-keys -X begin-selection
+# Yank and also copy to clipboard
+bind-key -T copy-mode-vi 'y' send -X copy-pipe 'pbcopy' 
 
-# don't rename windows automatically
-set-option -g allow-rename off
-
+setw -g mode-keys vi
 ######################
 ### DESIGN CHANGES ###
 ######################
