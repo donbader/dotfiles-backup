@@ -31,18 +31,19 @@ Select all file content
 #### `<Leader>` `[`    or   `<Leader>` `]`
 Indent to left / right  
 
-#### Quicker tab movement
-- `<Leader>` `<Tab>` Switch to next tab  
+#### Tab Navigation
+**`-` means "Tab"**
+`-` go to next tab  
+`n-` new tab  
+`c-` close current tab  
+`o-` current tab only  
+`q-` quit all tabs  
 
-- `<Leader>` `1`~`9` Switch to #th Tab  
 
-- `<Leader>` `t` Create new empty tab  
-
-- `<Leader>` `w` Close current tab  
-
-#### Quicker window movement
-- `<Ctrl>` `h` `j` `k` `l` Switch between every windows (Including tmux)  
-
+#### Window Navigation
+**`s` means "Split"**
+`s` + `left` `right` `up` `down` left/right/up/down split a window(actually a buffer)  
+`qw` quit window  
 
 #### `gV`
 Re-select pasted region

@@ -142,8 +142,26 @@ cnoremap +w!! w !sudo tee > /dev/null %
 " ag search (search keywords through all files in project root folders)
 cnoremap a/ Ag! ""<Left>
 
-" Quicker window movement
-" Ctrl-HJKL
+" Tab Navigation
+" `-` means tab 
+" TODO: same as NERDTree
+nnoremap - gt
+nnoremap _ gT
+nnoremap n- :tabe<CR>
+nnoremap c- :tabc<CR>
+nnoremap o- :tabonly<CR>
+nnoremap q- :qa<CR>
+
+" Window Navigation
+" Split buffer (See :help split)
+" TODO: same as NERDTree
+nnoremap s<left> :leftabove vnew<CR>
+nnoremap s<right> :rightbelow vnew<CR>
+nnoremap s<up> :leftabove new<CR>
+nnoremap s<down> :rightbelow new<CR>
+nnoremap qw :bw<CR> 
+
+
 
 " -------Leader-------------
 " Edit vimrc
@@ -158,21 +176,6 @@ nnoremap <Leader>] >>
 vnoremap <Leader>[ <<CR>gv
 vnoremap <Leader>] ><CR>gv
 
-" Quicker tab movement
-" (Tips: You can use 5<Leader><Tab> to switch to the 5th tab)
-nnoremap <Leader><Tab> gt
-nnoremap <Leader>1 1gt
-nnoremap <Leader>2 2gt
-nnoremap <Leader>3 3gt
-nnoremap <Leader>4 4gt
-nnoremap <Leader>5 5gt
-nnoremap <Leader>6 6gt
-nnoremap <Leader>7 7gt
-nnoremap <Leader>8 8gt
-nnoremap <Leader>9 9gt
-map <Leader>t :tabe<CR>
-map <Leader>w :tabc<CR>
-map <Leader>q :qa<CR>
 
 " Save files with <Leader>s
 nnoremap <Leader>s :w<CR>
