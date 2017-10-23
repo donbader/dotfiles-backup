@@ -6,7 +6,7 @@
 
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-    l = log -n 20 --graph --abbrev-commit --date=relative --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s - %Cblue%an%Creset %Cgreen(%ad)%Creset'
+    l = log -n 30 --graph --abbrev-commit --date=relative --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s - %Cblue%an%Creset %Cgreen(%ad)%Creset'
 	
 	# View the current working tree status using the short format
 	s = status -s
@@ -16,6 +16,9 @@
 
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull; git submodule foreach git pull origin master"
+
+  # commmit -m
+  cm = commit -m
 
   # modify last commit 
   camd = commit --amend
@@ -31,6 +34,7 @@
 
   # check diff before adding to stage
   patch = add -p
+  
 
 [color]
 
