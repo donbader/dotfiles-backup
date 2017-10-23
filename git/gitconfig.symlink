@@ -17,14 +17,20 @@
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull; git submodule foreach git pull origin master"
 
+  # modify last commit 
+  camd = commit --amend
+
 	# Clone a repository including all submodules
-	c = clone --recursive
+	cl = clone --recursive
 
 	# Commit all changes
 	ca = !git add -A && git commit -av
 	
 	# List aliases
-	aliases = config --get-regexp alias
+  aliases = config --get-regexp alias
+
+  # check diff before adding to stage
+  patch = add -p
 
 [color]
 

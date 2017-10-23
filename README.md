@@ -23,3 +23,4 @@ $ echo "source '$(dirname $0)/powerlevel9k/powerlevel9k.zsh-theme' > prompt.zsh
 - [ ] MacOs settings configuration
 - [ ] Make `backup.sh` to backup original dotfiles
 - [ ] Make `restore.sh` to restore
+- [ ] See https://github.com/wincent/wincent

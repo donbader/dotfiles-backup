@@ -54,6 +54,7 @@ set cursorcolumn
 set clipboard=unnamed
 set wrapscan
 set confirm
+set relativenumber
 " Seems to be useless
 " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h12
 
@@ -117,6 +118,9 @@ noremap gV `[v`]
 
 " disable q: prompt
 map q: :q
+
+" disable qq recording
+map qq <Nop>
 
 " Press ; also equlas to :
 nnoremap ; :
