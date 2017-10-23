@@ -52,4 +52,4 @@
 	untracked = cyan
 [core]
 	excludesfile = /Users/corey/.gitignore
-	editor = vim
+	editor = nvim
