@@ -24,3 +24,6 @@ $ echo "source '$(dirname $0)/powerlevel9k/powerlevel9k.zsh-theme' > prompt.zsh
 - [ ] Make `backup.sh` to backup original dotfiles
 - [ ] Make `restore.sh` to restore
 - [ ] See https://github.com/wincent/wincent
+- [ ] Learn Ansible
+    - [Ansible应用介绍] ( http://www.178linux.com/6014 )
+    - [現代 IT 人一定要知道的 Ansible 自動化組態技巧 Gitbook] (https://www.gitbook.com/book/chusiang/automate-with-ansible/details)
