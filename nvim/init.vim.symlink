@@ -100,10 +100,10 @@ endif
 
 " Set relativenumber while in normal mode
 set number
-" Invert comment below if you want auto switch relativenumber
-set norelativenumber
-" autocmd InsertEnter * :set norelativenumber
-" autocmd InsertLeave * :set relativenumber 
+" Invert comment below if you do/don't want auto switch relativenumber
+" set norelativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber 
 
 
 " -----------------------------
@@ -118,32 +118,16 @@ noremap gV `[v`]
 " disable q: prompt
 map q: :q
 
-" Redo maps to capital U
-nnoremap U <C-R>
-
-" -------Leader-------------
-" Edit vimrc
-nmap <Leader>vimrc :e $MYVIMRC<CR>
-
 " Press ; also equlas to :
 nnoremap ; :
+
+" Redo maps to capital U
+nnoremap U <C-R>
 
 " Auto jump to the next line when copy/paste
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
-
-" Select All
-nnoremap <Leader>a ggVG
-
-" Quicker window movement
-" Ctrl-HJKL
-
-" Indent
-nnoremap <Leader>[ <<
-nnoremap <Leader>] >>
-vnoremap <Leader>[ <<CR>gv
-vnoremap <Leader>] ><CR>gv
 
 " Unsets the "last search pattern" register by hitting return
 nnoremap <ESC><ESC> :noh<CR>
@@ -154,18 +138,34 @@ cnoremap +w!! w !sudo tee > /dev/null %
 " ag search (search keywords through all files in project root folders)
 cnoremap a/ Ag! ""<Left>
 
+" Quicker window movement
+" Ctrl-HJKL
+
+" -------Leader-------------
+" Edit vimrc
+nmap <Leader>vimrc :e $MYVIMRC<CR>
+
+" Select All
+nnoremap <Leader>a ggVG
+
+" Indent
+nnoremap <Leader>[ <<
+nnoremap <Leader>] >>
+vnoremap <Leader>[ <<CR>gv
+vnoremap <Leader>] ><CR>gv
+
 " Quicker tab movement
 " (Tips: You can use 5<Leader><Tab> to switch to the 5th tab)
 nnoremap <Leader><Tab> gt
-nnoremap <Leader>3 1gt
-nnoremap <Leader>4 2gt
-nnoremap <Leader>5 3gt
-nnoremap <Leader>6 4gt
-nnoremap <Leader>7 5gt
-nnoremap <Leader>8 6gt
-nnoremap <Leader>9 7gt
-nnoremap <Leader>10 8gt
-nnoremap <Leader>11 9gt
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
 map <Leader>t :tabe<CR>
 map <Leader>w :tabc<CR>
 map <Leader>q :qa<CR>
