@@ -28,7 +28,7 @@ echo "Get your ass out of the ${RED}fucking comfort zone${NC}!!"
 
 # powerlevel9k config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs root_indicator background_jobs)
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_left"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=5
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install latest version of git
-if ! brew ls --versions git > /dev/null; then
+if [ -n command -v git 1>/dev/null 2>&1 ]; then
     brew install git
 else
     brew upgrade git

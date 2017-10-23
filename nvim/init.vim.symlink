@@ -1,0 +1,196 @@
+" Plugins will be downloaded under the specified directory.
+" You can find lots of plugins on https://vimawesome.com/
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdcommenter'
+Plug 'kien/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'rking/ag.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'terryma/vim-expand-region'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-surround'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'kana/vim-textobj-user'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+" -----------------------------
+"  Display
+" -----------------------------
+set nocompatible
+colorscheme gruvbox
+set background=dark
+
+" Display extra whitespace
+set list listchars=eol:¬,tab:▸\ ,trail:.,
+set nojoinspaces
+" Softtabs, 2 spaces
+" https://segmentfault.com/a/1190000000446738
+syntax enable
+set smarttab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set shiftround
+set expandtab
+set ignorecase
+set smartcase
+set wildignorecase
+set autoindent
+set smartindent
+set mouse=a
+set enc=utf8
+set cursorline
+set cursorcolumn
+set clipboard=unnamed
+set wrapscan
+set confirm
+" Seems to be useless
+" set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h12
+
+
+" -----------------------------
+"  Autoload
+" -----------------------------
+
+" NERDTree
+let g:nerdtree_tabs_open_on_console_startup=2
+let g:nerdtree_tabs_smart_startup_focus=2
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" Ag
+let g:ag_working_path_mode="r"
+
+" Airline
+let g:airline_powerline_fonts = 1
+
+" vim-multiple-cursors
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
+
+" deoplete and vim-multiple-cursors bugs
+function Multiple_cursors_before()
+  let g:deoplete#disable_auto_complete = 1
+endfunction
+function Multiple_cursors_after()
+  let g:deoplete#disable_auto_complete = 0
+endfunction
+
+" text-obj
+runtime macros/matchit.vim
+set nocompatible
+if has("autocmd")
+  filetype indent plugin on
+endif
+
+" -----------------------------
+"  Number
+" -----------------------------
+
+" Set relativenumber while in normal mode
+set number
+" Invert comment below if you want auto switch relativenumber
+set norelativenumber
+" autocmd InsertEnter * :set norelativenumber
+" autocmd InsertLeave * :set relativenumber 
+
+
+" -----------------------------
+" Key mappings 
+" -----------------------------
+
+let mapleader = ","
+
+" Select pasted region
+noremap gV `[v`]
+
+" disable q: prompt
+map q: :q
+
+" Redo maps to capital U
+nnoremap U <C-R>
+
+" -------Leader-------------
+" Edit vimrc
+nmap <Leader>vimrc :e $MYVIMRC<CR>
+
+" Press ; also equlas to :
+nnoremap ; :
+
+" Auto jump to the next line when copy/paste
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+" Select All
+nnoremap <Leader>a ggVG
+
+" Quicker window movement
+" Ctrl-HJKL
+
+" Indent
+nnoremap <Leader>[ <<
+nnoremap <Leader>] >>
+vnoremap <Leader>[ <<CR>gv
+vnoremap <Leader>] ><CR>gv
+
+" Unsets the "last search pattern" register by hitting return
+nnoremap <ESC><ESC> :noh<CR>
+
+" sudo write current file
+cnoremap +w!! w !sudo tee > /dev/null %
+
+" ag search (search keywords through all files in project root folders)
+cnoremap a/ Ag! ""<Left>
+
+" Quicker tab movement
+" (Tips: You can use 5<Leader><Tab> to switch to the 5th tab)
+nnoremap <Leader><Tab> gt
+nnoremap <Leader>3 1gt
+nnoremap <Leader>4 2gt
+nnoremap <Leader>5 3gt
+nnoremap <Leader>6 4gt
+nnoremap <Leader>7 5gt
+nnoremap <Leader>8 6gt
+nnoremap <Leader>9 7gt
+nnoremap <Leader>10 8gt
+nnoremap <Leader>11 9gt
+map <Leader>t :tabe<CR>
+map <Leader>w :tabc<CR>
+map <Leader>q :qa<CR>
+
+" Save files with <Leader>s
+nnoremap <Leader>s :w<CR>
+
+" ---------Plugins---------------
+
+" vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" NERDTree toggle with Ctrl-t
+nnoremap <C-t> :NERDTreeToggle \| wincmd p<CR>
+
+" EasyMotion
+nmap s <Plug>(easymotion-s)
+
+" NerdCommenter
+let g:NERDSpaceDelims=1
+nnoremap <silent> <Leader>; :call NERDComment( 'n' , "Toggle")<CR>
+vnoremap <silent> <Leader>; :call NERDComment( 'v' , "Toggle")<CR>gv
+nnoremap <silent> ;<Leader> :call NERDComment( 'n' , "Toggle")<CR>
+vnoremap <silent> ;<Leader> :call NERDComment( 'v' , "Toggle")<CR>gv
+
+
+

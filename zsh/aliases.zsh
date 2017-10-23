@@ -1,6 +1,7 @@
 # Standard aliases
 alias ll='ls -l'
-alias la='ls -lA'
+alias lla='ls -lA'
+alias la='ls -A'
 alias lt='ls -lrt'
 alias sl=ls
 alias d='dirs -v | head -10'
@@ -20,6 +21,7 @@ alias -- -="cd -"
 
 # Applications
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias vim='/usr/local/bin/nvim'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
