@@ -83,15 +83,36 @@ press `s` to in normal mode
 - `<Ctrl>` `p` back to previous matched region  
 - `<Ctrl>` `x` ignore current matched region  
 
+#### vim-surround
+(after selection) `S` `symbol`
+e.g.  
+```
+  Hello Wolrd
+```
+
+visS"
+
+```
+  "Hello Wolrd"
+```
+
+(See https://github.com/tpope/vim-surround)  
+
+# Tips (macOS)
+1. [ How to get Cmd-left/right working with iTerm2 and Vim (without requiring .vimrc changes)? ](https://stackoverflow.com/questions/9595633/how-to-get-cmd-left-right-working-with-iterm2-and-vim-without-requiring-vimrc)
 
 
 
+# Todo
+- [ ] args usage
+- [ ] folding usage
+- [ ] Plugin:fugitive usage
+- [ ] tabs display not well (ugly?)
 
 
-
-
-
-
+# Useful sites
+http://kaochenlong.com/2012/04/27/screencast-1-learning-vim-from-the-beginning/
+http://kaochenlong.com/2011/12/28/vim-tips/
 
 
 
