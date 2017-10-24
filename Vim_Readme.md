@@ -21,41 +21,37 @@
 
 
 # Key shortcuts
-## `<Leader>` + ? (Leader=',')
-#### `<Leader>` `vimrc`
-Instantly edit vim configurations file.  
+## `<Leader>` + ? (Leader='<Space>')
+- `<Leader>`+`vimrc` Instantly edit vim configurations file.  
 
-#### `<Leader>` `a`
-Select all file content  
+- `<Leader>`+`a` Select all file content  
 
-#### `<Leader>` `[`    or   `<Leader>` `]`
-Indent to left / right  
+- `<Leader>`+`s` Save file  
+
+- `<Leader>`+`q` Quit file  
+
+## Others
+
+- `gV` Re-select pasted region  
+
+- `<Esc>` `<Esc>` stop highlighting the result of search  
+
+
 
 #### Tab Navigation
 **`-` means "Tab"**
-`-` go to next tab  
-`n-` new tab  
-`c-` close current tab  
-`o-` current tab only  
-`q-` quit all tabs  
+`-=` go to next tab  
+`=-` go to previous tab  
+`-n` new tab  
+`-x` close current tab  
+`-o` current tab only  
+`-q` quit all tabs  
 
 
 #### Window Navigation
 **`s` means "Split"**
 `s` + `left` `right` `up` `down` left/right/up/down split a window(actually a buffer)  
-`qw` quit window  
-
-#### `gV`
-Re-select pasted region
-
-#### `<Esc>` `<Esc>`
-stop highlighting the result of search
-
-
-#### Quicker file operations
-- `<Leader>` `q` Close all windows and tabs  
-
-- `<Leader>` `s` Save current file  
+`s` + `h` `j` `k` `l` same operations
 
 # Plugins Usage
 
@@ -64,20 +60,20 @@ keep pressing `v` in normal mode
 (See https://github.com/terryma/vim-expand-region)  
 
 #### Easy-Motion
-press `s` to in normal mode  
+press `<Leader>` in normal mode  
 (See https://github.com/easymotion/vim-easymotion)  
 
 #### NERDCommenter
-- `<Leader>` `;` Comment/Uncomment the current selection or line  
+- `;;` Comment/Uncomment the current selection or line  
 
 #### NERDTree
-- `<Leader>` `t` Toogle NERDTree (like file explorer)  
+- `<Leader>`+`t` Toogle NERDTree (like file explorer)  
 
 #### Ctrlp
 - `Ctrl` `p` fuzzy search filename in project root folders  
 
 #### Ag
-- `:a/` find keyword(code) in project root folders  
+- `<Leader>`+`F` find keyword(code) in project root folders  
 
 #### vim-multiple-cursors
 - `<Ctrl>` `n` next matched region  

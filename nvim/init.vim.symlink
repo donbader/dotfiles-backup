@@ -66,6 +66,12 @@ set relativenumber
 " NERDTree
 let g:nerdtree_tabs_open_on_console_startup=2
 let g:nerdtree_tabs_smart_startup_focus=2
+"" Disable <C-j> and <C-k>
+let g:NERDTreeMapJumpPrevSibling='<Nop>'
+let g:NERDTreeMapJumpNextSibling='<Nop>'
+
+" vim-surround
+let g:surround_116 = "<\r>"
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -75,6 +81,12 @@ let g:ag_working_path_mode="r"
 
 " Airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#close_symbol = 'X'
+let g:airline#extensions#tabline#show_close_button = 1
 
 " vim-multiple-cursors
 let g:multi_cursor_exit_from_visual_mode = 0
@@ -111,19 +123,17 @@ autocmd InsertLeave * :set relativenumber
 " Key mappings 
 " -----------------------------
 
-let mapleader = ","
+let mapleader = "\<Space>"
 
 " Select pasted region
 noremap gV `[v`]
 
-" disable q: prompt
+" disable annoying prompt
 map q: :q
+map Q <nop>
 
 " disable qq recording
 map qq <Nop>
-
-" Press ; also equlas to :
-nnoremap ; :
 
 " Redo maps to capital U
 nnoremap U <C-R>
@@ -140,27 +150,38 @@ nnoremap <ESC><ESC> :noh<CR>
 cnoremap +w!! w !sudo tee > /dev/null %
 
 " ag search (search keywords through all files in project root folders)
-cnoremap a/ Ag! ""<Left>
+nnoremap <Leader>F :Ag!<Space>
 
 " Tab Navigation
 " `-` means tab 
 " TODO: same as NERDTree
-nnoremap - gt
-nnoremap _ gT
-nnoremap n- :tabe<CR>
-nnoremap c- :tabc<CR>
-nnoremap o- :tabonly<CR>
-nnoremap q- :qa<CR>
+nnoremap -= gt
+nnoremap =- gT
+nnoremap -n :tabe<CR>
+nnoremap -x :tabc<CR>
+nnoremap -o :tabonly<CR>
+nnoremap -q :qa<CR>
+let g:NERDTreeMapOpenInTab = '-n'
+let g:NERDTreeMapOpenInTabSilent = '_N'
 
 " Window Navigation
 " Split buffer (See :help split)
 " TODO: same as NERDTree
 nnoremap s<left> :leftabove vnew<CR>
-nnoremap s<right> :rightbelow vnew<CR>
+nnoremap s<right> :rightbelow vnew<CR> 
 nnoremap s<up> :leftabove new<CR>
 nnoremap s<down> :rightbelow new<CR>
-nnoremap qw :bw<CR> 
+nnoremap sh :leftabove vnew<CR>
+nnoremap sl :rightbelow vnew<CR> 
+nnoremap sk :leftabove new<CR>
+nnoremap sj :rightbelow new<CR>
 
+
+" Indent
+nnoremap < <<
+nnoremap > >>
+vnoremap < <gv
+vnoremap > >gv
 
 
 " -------Leader-------------
@@ -170,15 +191,12 @@ nmap <Leader>vimrc :e $MYVIMRC<CR>
 " Select All
 nnoremap <Leader>a ggVG
 
-" Indent
-nnoremap <Leader>[ <<
-nnoremap <Leader>] >>
-vnoremap <Leader>[ <<CR>gv
-vnoremap <Leader>] ><CR>gv
 
-
-" Save files with <Leader>s
+" Save file with <Leader>s
 nnoremap <Leader>s :w<CR>
+
+" quit file with <Leader>q
+nnoremap <Leader>q :q<CR>
 
 " ---------Plugins---------------
 
@@ -186,18 +204,18 @@ nnoremap <Leader>s :w<CR>
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-" NERDTree toggle with Ctrl-t
-nnoremap <C-t> :NERDTreeToggle \| wincmd p<CR>
-
 " EasyMotion
-nmap s <Plug>(easymotion-s)
+nmap <Leader><Leader> <Plug>(easymotion-s)
+map <Leader> <Plug>(easymotion-prefix)
+" Replace default search to easymotion-search
+map  / <Plug>(easymotion-sn)
+
+" NERDTree
+nnoremap <C-t> :NERDTreeToggle \| wincmd p<CR>
 
 " NerdCommenter
 let g:NERDSpaceDelims=1
-nnoremap <silent> <Leader>; :call NERDComment( 'n' , "Toggle")<CR>
-vnoremap <silent> <Leader>; :call NERDComment( 'v' , "Toggle")<CR>gv
-nnoremap <silent> ;<Leader> :call NERDComment( 'n' , "Toggle")<CR>
-vnoremap <silent> ;<Leader> :call NERDComment( 'v' , "Toggle")<CR>gv
-
+nnoremap <silent> ;; :call NERDComment( 'n' , "Toggle")<CR>
+vnoremap <silent> ;; :call NERDComment( 'v' , "Toggle")<CR>gv
 
 
