@@ -1,0 +1,42 @@
+{
+    "editor.fontFamily": "Hack",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000000,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors": {
+        "normal": "#024b6d",
+        "insert": "#d33682",
+        "visual": "#268bd2",
+        "visualline": "#2aa198",
+        "visualblock": "#859900",
+        "replace": "#b58900"
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before":["<C-n>"],
+            "after":[],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys":{
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "workbench.startupEditor": "none"
+}
