@@ -10,7 +10,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
-Plug 'kien/ctrlp.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rking/ag.vim'
@@ -20,6 +19,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'kana/vim-textobj-user'
+Plug 'kien/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'sjl/gundo.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -105,6 +107,9 @@ if has("autocmd")
   filetype indent plugin on
 endif
 
+" ctrlp
+let g:ctrlp_working_path_mode = 'ra'
+
 " -----------------------------
 "  Number
 " -----------------------------
@@ -126,12 +131,9 @@ let mapleader = "\<Space>"
 " Select pasted region
 noremap gV `[v`]
 
-" disable annoying prompt
-map q: :q
-map Q <nop>
-
-" disable qq recording
-map qq <Nop>
+" switch macro recording to Z
+nnoremap Z q
+nnoremap q <nop>
 
 " Redo maps to capital U
 nnoremap U <C-R>
@@ -219,5 +221,15 @@ nnoremap <Leader>b :NERDTreeToggle \| wincmd p<CR>
 let g:NERDSpaceDelims=1
 nnoremap <silent> ;; :call NERDComment( 'n' , "Toggle")<CR>
 vnoremap <silent> ;; :call NERDComment( 'v' , "Toggle")<CR>gv
+
+" GitGutter
+" Navigate to hunk
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+" Toggle highlight
+nmap <Leader>hl :GitGutterLineHighlightsToggle<CR>
+
+" Gundo
+nnoremap <Leader>gu :GundoToggle<CR>
 
 

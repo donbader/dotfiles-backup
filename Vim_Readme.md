@@ -93,6 +93,14 @@ visS"
   "Hello Wolrd"
 ```
 
+### GitGutter
+`]h` to navigate to next hunk  
+`[h` to navigate to previous hunk  
+`<Leader>`+`hl` toggle gitgutter highlighting  
+
+### Gundo
+`<Leader>`+`gu` toggle the undo tree  
+
 (See https://github.com/tpope/vim-surround)  
 
 # Tips (macOS)

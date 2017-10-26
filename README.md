@@ -20,7 +20,7 @@ $ echo "source '$(dirname $0)/powerlevel9k/powerlevel9k.zsh-theme' > prompt.zsh
 
 ## Todo
 - [ ] iTerm2 configuration
-- [ ] MacOs settings configuration
+- [ ] MacOs settings configuration (See [awesome-command-line](https://github.com/herrbischoff/awesome-osx-command-line))
 - [ ] Make `backup.sh` to backup original dotfiles
 - [ ] Make `restore.sh` to restore
 - [ ] See https://github.com/wincent/wincent
