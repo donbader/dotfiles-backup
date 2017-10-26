@@ -85,9 +85,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#close_symbol = 'X'
-let g:airline#extensions#tabline#show_close_button = 1
-
+"
 " vim-multiple-cursors
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
@@ -206,12 +204,12 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 " EasyMotion
 nmap <Leader><Leader> <Plug>(easymotion-s)
-map <Leader> <Plug>(easymotion-prefix)
+map \\ <Plug>(easymotion-prefix)
 " Replace default search to easymotion-search
 map  / <Plug>(easymotion-sn)
 
 " NERDTree
-nnoremap <C-t> :NERDTreeToggle \| wincmd p<CR>
+nnoremap <Leader>b :NERDTreeToggle \| wincmd p<CR>
 
 " NerdCommenter
 let g:NERDSpaceDelims=1

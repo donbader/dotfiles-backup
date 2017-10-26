@@ -67,7 +67,7 @@ press `<Leader>` in normal mode
 - `;;` Comment/Uncomment the current selection or line  
 
 #### NERDTree
-- `<Leader>`+`t` Toogle NERDTree (like file explorer)  
+- `<Leader>`+`b` Toogle NERDTree ('b' for sidebar)  
 
 #### Ctrlp
 - `Ctrl` `p` fuzzy search filename in project root folders  
