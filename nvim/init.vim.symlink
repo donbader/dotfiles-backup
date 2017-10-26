@@ -173,6 +173,10 @@ nnoremap sh :leftabove vnew<CR>
 nnoremap sl :rightbelow vnew<CR> 
 nnoremap sk :leftabove new<CR>
 nnoremap sj :rightbelow new<CR>
+inoremap <C-h> <C-o>:TmuxNavigateLeft<CR>
+inoremap <C-j> <C-o>:TmuxNavigateDown<CR>
+inoremap <C-k> <C-o>:TmuxNavigateUp<CR>
+inoremap <C-l> <C-o>:TmuxNavigateRight<CR>
 
 
 " Indent
