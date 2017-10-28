@@ -11,17 +11,29 @@ Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'terryma/vim-expand-region'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'kana/vim-textobj-user'
-Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-repeat'
 Plug 'airblade/vim-gitgutter'
 Plug 'sjl/gundo.vim'
+
+" Textobj
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
+" Fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+if(has('nvim'))
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/neocomplete'
+endif
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -55,6 +67,7 @@ set cursorline
 set cursorcolumn
 set clipboard=unnamed
 set wrapscan
+set scrolloff=7
 set confirm
 set relativenumber
 " Seems to be useless
@@ -107,8 +120,6 @@ if has("autocmd")
   filetype indent plugin on
 endif
 
-" ctrlp
-let g:ctrlp_working_path_mode = 'ra'
 
 " -----------------------------
 "  Number
@@ -138,6 +149,17 @@ nnoremap q <nop>
 " Redo maps to capital U
 nnoremap U <C-R>
 
+" 2x scrolling
+nnoremap <C-e> 2<C-e>
+nnoremap <C-y> 2<C-y>
+
+" Keep search pattern at the center of the screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
 " Auto jump to the next line when copy/paste
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -149,8 +171,11 @@ nnoremap <ESC><ESC> :noh<CR>
 " sudo write current file
 cnoremap +w!! w !sudo tee > /dev/null %
 
-" ag search (search keywords through all files in project root folders)
-nnoremap <Leader>F :Ag!<Space>
+" Line Navigation
+noremap H ^
+noremap L $
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
 
 " Tab Navigation
 " `-` means tab 
@@ -203,7 +228,6 @@ nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " ---------Plugins---------------
-
 " vim-expand-region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
@@ -212,7 +236,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 nmap <Leader><Leader> <Plug>(easymotion-s)
 map \\ <Plug>(easymotion-prefix)
 " Replace default search to easymotion-search
-map  / <Plug>(easymotion-sn)
+map  / <Plug>(easymotion-sn)\v
 
 " NERDTree
 nnoremap <Leader>b :NERDTreeToggle \| wincmd p<CR>
@@ -232,4 +256,8 @@ nmap <Leader>hl :GitGutterLineHighlightsToggle<CR>
 " Gundo
 nnoremap <Leader>gu :GundoToggle<CR>
 
+" FZF
+nnoremap <C-p> :Files<CR>
+nnoremap <C-f> :Ag<CR>
+cnoremap : :Commands<CR>
 

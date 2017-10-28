@@ -1,6 +1,6 @@
 # Run tmux if exists
 if brew ls --versions tmux > /dev/null; then
-	[ -z $TMUX ] && exec tmux && echo "Launched tmux"
+	[ -z $TMUX ] && exec tmux 
 else
     echo "tmux isn't installed. (brew install tmux) "
 fi
@@ -11,7 +11,6 @@ export ZSH="$(dirname $0)/oh-my-zsh"
 
 # Never auto apply the theme
 ZSH_THEME=""
-
 
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)

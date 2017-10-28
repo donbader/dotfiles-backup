@@ -1,24 +1,39 @@
 # Neovim
 
 # Installed Plugins (Using [vim-plug](https://github.com/junegunn/vim-plug))
-- Plug 'tpope/vim-fugitive'
-- Plug 'scrooloose/nerdtree'
-- Plug 'jistr/vim-nerdtree-tabs'
-- Plug 'vim-airline/vim-airline'
-- Plug 'morhetz/gruvbox'
-- Plug 'easymotion/vim-easymotion'
-- Plug 'scrooloose/nerdcommenter'
-- Plug 'kien/ctrlp.vim'
-- Plug 'terryma/vim-multiple-cursors'
-- Plug 'Shougo/deoplete.nvim'
-- Plug 'rking/ag.vim'
-- Plug 'ryanoasis/vim-devicons'
-- Plug 'terryma/vim-expand-region'
-- Plug 'christoomey/vim-tmux-navigator'
-- Plug 'tpope/vim-surround'
-- Plug 'nelstrom/vim-textobj-rubyblock'
-- Plug 'kana/vim-textobj-user'
 
+```vim
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ryanoasis/vim-devicons'
+Plug 'terryma/vim-expand-region'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'airblade/vim-gitgutter'
+Plug 'sjl/gundo.vim'
+
+" Textobj
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
+" Fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+if(has('nvim'))
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/neocomplete'
+endif
+```
 
 # Key shortcuts
 ## `<Leader>` + ? (Leader='<Space>')
@@ -36,7 +51,16 @@
 
 - `<Esc>` `<Esc>` stop highlighting the result of search  
 
+- `<` and `>` for Indentation  
 
+#### Line Navigation
+(Normal Mode)  
+`H` beginning of line  
+`L` end of line
+  
+(Insert Mode)  
+`Ctrl`+`a` beginning of line  
+`Ctrl`+`e` end of line   
 
 #### Tab Navigation
 **`-` means "Tab"**
@@ -60,7 +84,7 @@ keep pressing `v` in normal mode
 (See https://github.com/terryma/vim-expand-region)  
 
 #### Easy-Motion
-press `<Leader>` in normal mode  
+press `<Leader>`+`<Leader>` in normal mode  
 (See https://github.com/easymotion/vim-easymotion)  
 
 #### NERDCommenter
@@ -69,11 +93,10 @@ press `<Leader>` in normal mode
 #### NERDTree
 - `<Leader>`+`b` Toogle NERDTree ('b' for sidebar)  
 
-#### Ctrlp
-- `Ctrl` `p` fuzzy search filename in project root folders  
-
-#### Ag
-- `<Leader>`+`F` find keyword(code) in project root folders  
+#### FuzzyFinder
+- `Ctrl`+`p` fuzzy search filename in project root folders  
+- `Ctrl`+`F` find keyword(code) in project root folders  
+- `:`+`:` fuzzy Commands
 
 #### vim-multiple-cursors
 - `<Ctrl>` `n` next matched region  
@@ -107,12 +130,10 @@ visS"
 1. [ How to get Cmd-left/right working with iTerm2 and Vim (without requiring .vimrc changes)? ](https://stackoverflow.com/questions/9595633/how-to-get-cmd-left-right-working-with-iterm2-and-vim-without-requiring-vimrc)
 
 
-
 # Todo
 - [ ] args usage
 - [ ] folding usage
 - [ ] Plugin:fugitive usage
-- [ ] tabs display not well (ugly?)
 
 
 # Useful sites
