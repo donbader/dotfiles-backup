@@ -1,0 +1,10 @@
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "window.zoomLevel": 0,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#024b6d",
+        "statusBar.noFolderBackground": "#024b6d",
+        "statusBar.debuggingBackground": "#024b6d"
+    }
+}

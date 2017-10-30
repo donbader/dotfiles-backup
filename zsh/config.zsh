@@ -1,9 +1,9 @@
 # Run tmux if exists
-if brew ls --versions tmux > /dev/null; then
-	[ -z $TMUX ] && exec tmux 
-else
-    echo "tmux isn't installed. (brew install tmux) "
-fi
+# if brew ls --versions tmux > /dev/null; then
+	# [ -z $TMUX ] && exec tmux 
+# else
+    # echo "tmux isn't installed. (brew install tmux) "
+# fi
 
 
 # Path to your oh-my-zsh installation.
@@ -20,6 +20,10 @@ ZSH_THEME=""
 plugins=(git task extract)
 
 source $ZSH/oh-my-zsh.sh
+
+
+# FZF search includes hidden files
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 
 
 # Welcome Message
