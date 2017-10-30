@@ -57,5 +57,3 @@ alias rmds='find . -name ‘.DS_Store’ -type f -delete'
 # re-source ~/.zshrc
 alias reloadrc='source ~/.zshrc'
 
-# task template
-alias tasktemp='echo task add due:`date +"%Y-%m-%dT%H:%M:%SZ"` description:'
