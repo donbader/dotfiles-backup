@@ -1,13 +1,24 @@
 {
     "vim.disableAnnoyingNeovimMessage": true,
-    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "on",
+    "editor.formatOnSave": true,
     "window.zoomLevel": 0,
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
         "statusBar.background": "#024b6d",
         "statusBar.noFolderBackground": "#024b6d",
         "statusBar.debuggingBackground": "#024b6d"
     },
-    "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": false,
-    "editor.minimap.enabled": false
+    "workbench.startupEditor": "none",
+    "terminal.integrated.fontFamily": "Hack",
+    "workbench.iconTheme": "vscode-icons",
+    "projectManager.groupList": true,
+    "projectManager.git.baseFolders": [
+        "$home/dotfiles",
+        "$home/Documents"        
+    ],
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 60000
 }

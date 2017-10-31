@@ -1,27 +1,54 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    {
-      "key": "ctrl+h",
-      "command": "workbench.action.focusPreviousGroup",
-      "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
-    {
-      "key": "ctrl+l",
-      "command": "workbench.action.focusNextGroup",
-      "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
-    {
-      "key": "ctrl+`",
-      "command": "workbench.action.terminal.toggleTerminal"
-    },
-    {
-      "key": "ctrl+`",
-      "command": "workbench.action.terminal.focus",
-      "when": "!terminalFocus"
-    },
-    {
-      "key": "ctrl+j",
-      "command": "workbench.action.terminal.focus",
-      "when": "editorTextFocus"
+  // Windows Navigation 
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusNextGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // Line type changing (dependency: Settings cycler)
+  {
+    "key": "cmd+l",
+    "command": "settings.cycle",
+    "when": "editorTextFocus",
+    "args": {
+      "id": "relativeLineNumbers",
+      "values": [{
+          "editor.lineNumbers": "on"
+        },
+        {
+          "editor.lineNumbers": "relative"
+        }
+      ]
     }
+  }
 ]
