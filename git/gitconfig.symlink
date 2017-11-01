@@ -17,6 +17,9 @@
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull; git submodule foreach git pull origin master"
 
+	# rebase from HEAD~{num}
+	rb = "!sh -c \"git rebase -i HEAD~$1\" -"
+
   # commmit -m
   cm = commit -m
 
