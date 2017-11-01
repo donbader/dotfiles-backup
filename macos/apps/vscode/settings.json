@@ -17,8 +17,7 @@
     "projectManager.groupList": true,
     "projectManager.git.baseFolders": [
         "$home/dotfiles",
-        "$home/Documents"        
+        "$home/Documents"
     ],
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 60000
+    "files.autoSave": "onFocusChange"
 }

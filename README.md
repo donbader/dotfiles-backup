@@ -18,3 +18,12 @@ $ git clone https://github.com/bhilburn/powerlevel9k zsh/powerlevel9k
 $ echo "source '$(dirname $0)/powerlevel9k/powerlevel9k.zsh-theme' > prompt.zsh
 ```
 
+## Alfred
+A very awesome alternative of Spotlight. It's better to purchase Powerpack feature in order to get a better productive environment.
+
+
+## Editor
+Have Experienced 
+`Sublime Text 3`, `Vim`, `NeoVim`, `Visual Studio Code`
+And recently I have chosen `Visual Studio Code`.
+So I have stopped updating `NeoVim` configuration now.
