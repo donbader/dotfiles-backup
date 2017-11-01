@@ -2,7 +2,6 @@
     "vim.disableAnnoyingNeovimMessage": true,
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "on",
-    "editor.formatOnSave": true,
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Popping and Locking",
