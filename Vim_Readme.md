@@ -41,7 +41,7 @@ endif
 
 - `<Leader>`+`a` Select all file content  
 
-- `<Leader>`+`s` Save file  
+- `<Leader>`+`w` Save file  
 
 - `<Leader>`+`q` Quit file  
 
@@ -49,7 +49,7 @@ endif
 
 - `gV` Re-select pasted region  
 
-- `<Esc>` `<Esc>` stop highlighting the result of search  
+- `z` stop highlighting the result of search  
 
 - `<` and `>` for Indentation  
 
@@ -88,7 +88,7 @@ press `<Leader>`+`<Leader>` in normal mode
 (See https://github.com/easymotion/vim-easymotion)  
 
 #### NERDCommenter
-- `;;` Comment/Uncomment the current selection or line  
+- `;` Comment/Uncomment the current selection or line  
 
 #### NERDTree
 - `<Leader>`+`b` Toogle NERDTree ('b' for sidebar)  

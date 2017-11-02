@@ -70,7 +70,7 @@ set wrapscan
 set scrolloff=7
 set confirm
 set relativenumber
-" Seems to be useless
+" For GUI Font
 " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h12
 
 
@@ -139,6 +139,12 @@ autocmd InsertLeave * :set relativenumber
 
 let mapleader = "\<Space>"
 
+" For physical line navigation
+noremap  <buffer> <silent> k gk
+noremap  <buffer> <silent> j gj
+noremap  <buffer> <silent> 0 g0
+noremap  <buffer> <silent> $ g$
+
 " Select pasted region
 noremap gV `[v`]
 
@@ -166,7 +172,7 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Unsets the "last search pattern" register by hitting return
-nnoremap <ESC><ESC> :noh<CR>
+nnoremap z :noh<CR>
 
 " sudo write current file
 cnoremap +w!! w !sudo tee > /dev/null %
@@ -221,11 +227,14 @@ nmap <Leader>vimrc :e $MYVIMRC<CR>
 nnoremap <Leader>a ggVG
 
 
-" Save file with <Leader>s
-nnoremap <Leader>s :w<CR>
+" Save file with <Leader>w
+nnoremap <Leader>w :w<CR>
 
 " quit file with <Leader>q
 nnoremap <Leader>q :q<CR>
+
+" search with magic(regex)
+nnoremap / /\v
 
 " ---------Plugins---------------
 " vim-expand-region
@@ -235,16 +244,14 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " EasyMotion
 nmap <Leader><Leader> <Plug>(easymotion-s)
 map \\ <Plug>(easymotion-prefix)
-" Replace default search to easymotion-search
-map  / <Plug>(easymotion-sn)\v
 
 " NERDTree
 nnoremap <Leader>b :NERDTreeToggle \| wincmd p<CR>
 
 " NerdCommenter
 let g:NERDSpaceDelims=1
-nnoremap <silent> ;; :call NERDComment( 'n' , "Toggle")<CR>
-vnoremap <silent> ;; :call NERDComment( 'v' , "Toggle")<CR>gv
+nnoremap <silent> ; :call NERDComment( 'n' , "Toggle")<CR>
+vnoremap <silent> ; :call NERDComment( 'v' , "Toggle")<CR>gv
 
 " GitGutter
 " Navigate to hunk

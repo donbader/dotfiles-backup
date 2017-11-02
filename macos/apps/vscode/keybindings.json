@@ -1,5 +1,9 @@
 // Place your key bindings in this file to overwrite the defaults
-[
+[{
+    "key": "cmd+enter",
+    "command": "workbench.action.toggleFullScreen"
+  },
+
   // Windows Navigation 
   {
     "key": "ctrl+h",
@@ -32,7 +36,17 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+[Backquote]",
-    "command": "workbench.action.terminal.toggleTerminal"
+    "key": "shift+alt+down",
+    "command": "expand_region",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "-editor.action.copyLinesUpAction"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "undo_expand_region",
+    "when": "editorTextFocus && editorHasSelection"
   }
 ]

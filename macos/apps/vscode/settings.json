@@ -1,14 +1,14 @@
 {
-    "vim.disableAnnoyingNeovimMessage": true,
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "on",
     "window.zoomLevel": 0,
+    "editor.wordWrap": "on",
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#024b6d",
-        "statusBar.noFolderBackground": "#024b6d",
-        "statusBar.debuggingBackground": "#024b6d"
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
     },
     "workbench.startupEditor": "none",
     "terminal.integrated.fontFamily": "Hack",
@@ -18,5 +18,112 @@
         "$home/dotfiles",
         "$home/Documents"
     ],
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+
+    // Vim Settings
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.easymotion": false,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.overrideCopy": true,
+    "vim.substituteGlobalFlag": true,
+    "vim.cmdLineInitialColon": true,
+    "vim.visualstar": true,
+    "vim.searchHighlightColor": "rgba(255, 1, 81, 0.3)",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors" : {
+        "normal": "#005f5f",
+        "insert": "#5f0000",
+        "visual": "#5f00af",
+        "visualline": "#005f87",
+        "visualblock": "#86592d",
+        "replace": "#000000"
+    },
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>", "j"]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [{
+            "before": ["<leader>", "w"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.files.save",
+                "args": []
+            }]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.closeActiveEditor",
+                "args": []
+            }]
+        },
+        {
+            "before": ["u"],
+            "after": [],
+            "commands": [{
+                "command": "undo",
+                "args": []
+            }]
+        },
+        {
+            "before": ["U"],
+            "after": [],
+            "commands": [{
+                "command": "redo",
+                "args": []
+            }]
+        },
+        {
+            "before": ["z"],
+            "after": [],
+            "commands": [{
+                "command": ":noh"
+            }]
+        },
+        {
+            "before": ["Z", "Z"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                },
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<BS>"],
+            "after": ["d", "h"]
+        },
+        {
+            "before": [";"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.disableAnnoyingNeovimMessage": true
 }
