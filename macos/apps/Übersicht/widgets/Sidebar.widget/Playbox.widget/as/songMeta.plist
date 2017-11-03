@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>albumName</key>
+	<string>不需要裝乖</string>
+	<key>artistName</key>
+	<string>R-chord</string>
+	<key>coverURL</key>
+	<string>NA</string>
+	<key>currentPosition</key>
+	<string>67000</string>
+	<key>songDuration</key>
+	<string>268029</string>
+	<key>songName</key>
+	<string>台北台北</string>
+	<key>songRating</key>
+	<string>★☆☆☆☆</string>
+</dict>
+</plist>

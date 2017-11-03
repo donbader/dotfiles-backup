@@ -3,6 +3,7 @@
     "editor.lineNumbers": "on",
     "window.zoomLevel": 0,
     "editor.wordWrap": "on",
+    "editor.autoIndent": true,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
@@ -21,6 +22,9 @@
     "files.autoSave": "onFocusChange",
 
     // Vim Settings
+    "vim.leader": "<space>",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.autoindent": true,
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.easymotion": false,
@@ -123,7 +127,5 @@
             "before": ["k"],
             "after": ["g", "k"]
         }
-    ],
-    "vim.leader": "<space>",
-    "vim.disableAnnoyingNeovimMessage": true
+    ]
 }

@@ -48,5 +48,10 @@
     "key": "shift+alt+up",
     "command": "undo_expand_region",
     "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "cmd+m",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
   }
 ]
