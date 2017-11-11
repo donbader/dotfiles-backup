@@ -2,7 +2,7 @@
 alias ll='ls -l'
 alias lla='ls -lA'
 alias la='ls -A'
-alias lt='ls -lrt'
+alias lt='ls -lArt'
 alias sl=ls
 alias d='dirs -v | head -10'
 alias cls='clear'

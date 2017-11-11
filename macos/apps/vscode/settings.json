@@ -17,7 +17,7 @@
     "projectManager.groupList": true,
     "projectManager.git.baseFolders": [
         "$home/dotfiles",
-        "$home/Documents"
+        "$home/Documents/git"
     ],
     "files.autoSave": "onFocusChange",
 
@@ -127,5 +127,9 @@
             "before": ["k"],
             "after": ["g", "k"]
         }
-    ]
+    ],
+    "files.eol": "\n",
+    "[markdown]": {
+        "editor.quickSuggestions": true
+    }
 }
