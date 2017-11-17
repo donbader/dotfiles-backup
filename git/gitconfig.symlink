@@ -64,5 +64,5 @@
 	changed = green
 	untracked = cyan
 [core]
-	excludesfile = /Users/corey/.gitignore
+	excludesfile = ~/.gitignore
 	editor = nvim
