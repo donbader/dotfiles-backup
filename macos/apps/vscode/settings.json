@@ -1,9 +1,18 @@
 {
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "on",
-    "window.zoomLevel": 0,
     "editor.wordWrap": "on",
     "editor.autoIndent": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.tabSize": 4,
+    "[html]":{ "editor.tabSize": 2 },
+    "[erb]":{ "editor.tabSize": 2 },
+    "[ruby]":{ "editor.tabSize": 2 },
+    "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
@@ -20,6 +29,11 @@
         "$home/Documents/git"
     ],
     "files.autoSave": "onFocusChange",
+
+    
+    // Emmet
+    "emmet.extensionsPath": "/Users/corey/dotfiles/macos/apps/vscode/snippets",    
+    "emmet.includeLanguages": {"erb": "html"},
 
     // Vim Settings
     "vim.leader": "<space>",
