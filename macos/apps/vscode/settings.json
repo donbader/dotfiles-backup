@@ -21,7 +21,7 @@
         "statusBar.debuggingBackground": "#005f5f"
     },
     "workbench.startupEditor": "none",
-    "terminal.integrated.fontFamily": "Hack",
+    "terminal.integrated.fontFamily": "Knack Nerd Font",
     "workbench.iconTheme": "vscode-icons",
     "projectManager.groupList": true,
     "projectManager.git.baseFolders": [
