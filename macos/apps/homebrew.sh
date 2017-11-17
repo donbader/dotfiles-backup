@@ -26,3 +26,4 @@ brew install homebrew/dupes/rsync
 
 # install fonts
 brew cask install font-hack-nerd-font
+brew cask install font-droidsansmono-nerd-font-mono
