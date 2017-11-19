@@ -1,9 +1,9 @@
 HD_data=/Volumes/Data\ HD/
-Documents=$HD_data/Documents
-downloads=$HD_data/Downloads
-inbox=$HD_data/Inbox
-pictures=$HD_data/Pictures
-movies=$HD_data/Movies
-musics=$HD_data/Musics
+Documents=~/Documents
+git=~/Documents/git
+downloads=~/Downloads
+inbox=~/Inbox
+pictures=~/Pictures
+movies=~/Movies
+musics=~/Musics
 dotfiles=~/dotfiles
-
