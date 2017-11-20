@@ -57,3 +57,5 @@ alias rmds='find . -name ‘.DS_Store’ -type f -delete'
 # re-source ~/.zshrc
 alias reloadrc='source ~/.zshrc'
 
+# vscode = code
+alias vscode='code'
