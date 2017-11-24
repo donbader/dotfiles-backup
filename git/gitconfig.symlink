@@ -40,7 +40,7 @@
   
   # checkout
   co = checkout
-  b = checkout -b
+  b = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
 [color]
 
 	# Use colors in Git commands that are capable of colored output when

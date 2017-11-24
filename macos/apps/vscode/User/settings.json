@@ -3,6 +3,7 @@
     "editor.lineNumbers": "on",
     "editor.wordWrap": "on",
     "editor.autoIndent": true,
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.quickSuggestions": {
         "other": true,
         "comments": true,
@@ -18,7 +19,7 @@
     "[ruby]": {
         "editor.tabSize": 2
     },
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
@@ -147,5 +148,7 @@
     "files.eol": "\n",
     "[markdown]": {
         "editor.quickSuggestions": true
-    }
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true
 }

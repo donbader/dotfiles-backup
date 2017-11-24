@@ -54,7 +54,7 @@
     "command": "workbench.action.toggleMaximizedPanel",
     "when": "terminalFocus"
   },{
-    "key": "ctrl+tab",
+    "key": "ctrl+`",
     "command": "workbench.action.terminal.toggleTerminal"
   }
 ]
