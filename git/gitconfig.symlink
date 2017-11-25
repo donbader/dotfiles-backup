@@ -5,9 +5,18 @@
     helper = osxkeychain
 
 [alias]
+	# https://gist.github.com/robmiller/6018582
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	publish = "!git push -u origin $(git branch-name)"
+	unpublish = "!git push origin :$(git branch-name)"
+	recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
+	rebase-branch = "!git rebase -i `git merge-base master HEAD`"
+	unstage = reset HEAD
+	diffc = diff --cached
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log -n 30 --graph --abbrev-commit --date=relative --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s - %Cblue%an%Creset %Cgreen(%ad)%Creset'
-	
+
 	# View the current working tree status using the short format
 	s = status -s
 
@@ -18,29 +27,35 @@
 	p = !"git pull; git submodule foreach git pull origin master"
 
 	# rebase from HEAD~{num}
-	rb = "!sh -c \"git rebase -i HEAD~$1\" -"
+	rb = !"sh -c \"git rebase -i HEAD~$1\" -"
 
-  # commmit -m
-  cm = commit -m
+	# commmit -m
+	cm = commit -m
 
-  # modify last commit 
-  camd = commit --amend
+	# modify last commit
+	camd = commit --amend
 
 	# Clone a repository including all submodules
 	cl = clone --recursive
 
 	# Commit all changes
-	ca = !git add -A && git commit -av
-	
-	# List aliases
-  aliases = config --get-regexp alias
+	ca = !"git add -A && git commit -av"
 
-  # check diff before adding to stage
-  patch = add -p
-  
-  # checkout
-  co = checkout
-  b = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
+	# List aliases
+	aliases = config --get-regexp alias
+
+	# check diff before adding to stage
+	patch = add -p
+
+	# checkout
+	co = checkout
+
+	# checkout and delete current branch
+	CO = !"f() { name=$(git branch-name) &&  git checkout $1 2>/dev/null && git branch -D $name; }; f"
+
+	# Branch related
+	b = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
