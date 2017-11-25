@@ -1,13 +1,13 @@
 [
 	{
 		"name": "Xfers",
-		"rootPath": "/Users/donbader/Documents/Xfers",
+		"rootPath": "$home/Documents/Xfers",
 		"paths": [],
 		"group": ""
 	},
 	{
 		"name": "Dotfiles",
-		"rootPath": "/Users/donbader/dotfiles",
+		"rootPath": "$home/dotfiles",
 		"paths": [],
 		"group": ""
 	}

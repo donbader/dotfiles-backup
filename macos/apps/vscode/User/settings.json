@@ -150,5 +150,13 @@
         "editor.quickSuggestions": true
     },
     "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true
+    "files.trimFinalNewlines": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "tmp": true
+    }
 }

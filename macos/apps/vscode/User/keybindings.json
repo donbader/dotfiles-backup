@@ -4,7 +4,7 @@
     "command": "workbench.action.toggleFullScreen"
   },
 
-  // Windows Navigation 
+  // Windows Navigation
   {
     "key": "ctrl+h",
     "command": "workbench.action.focusPreviousGroup",
@@ -49,12 +49,60 @@
     "command": "undo_expand_region",
     "when": "editorTextFocus && editorHasSelection"
   },
+
+  // Terminal related
   {
     "key": "cmd+m",
     "command": "workbench.action.toggleMaximizedPanel",
     "when": "terminalFocus"
-  },{
+  },
+  {
     "key": "ctrl+`",
     "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.terminal.focusAtIndex1",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.terminal.focusAtIndex2",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.terminal.focusAtIndex3",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.action.terminal.focusAtIndex4",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.terminal.rename",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
   }
 ]
