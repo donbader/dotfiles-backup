@@ -15,7 +15,7 @@
 	diffc = diff --cached
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-    l = log -n 30 --graph --abbrev-commit --date=relative --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s - %Cblue%an%Creset %Cgreen(%ad)%Creset'
+  l = log --graph --abbrev-commit --date=relative --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s - %Cblue%an%Creset %Cgreen(%ad)%Creset'
 
 	# View the current working tree status using the short format
 	s = status -s
@@ -51,10 +51,29 @@
 	co = checkout
 
 	# checkout and delete current branch
-	CO = !"f() { name=$(git branch-name) &&  git checkout $1 2>/dev/null && git branch -D $name; }; f"
+	codc = !"f() { name=$(git branch-name) &&  git checkout $1 2>/dev/null && git branch -D $name; }; f"
 
 	# Branch related
-	b = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
+  b = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
+
+  ### TODO: frequently use
+  # commit
+  # add-all and commit
+  # unstage
+  # break commit to unstage
+  # cherry-pick
+  # insert commit to...
+  # rebase -i
+  ### Branch
+  # push -u origin $branchname
+  # codc ... => checkout previous branch (for using remote branch as local)
+  # checkout the branch or create a new one
+  # branch-name
+  # delete the remote branch
+  # recover to the reflog commit
+  ### Pull 
+  # pull-rebase
+  # pull-all for pull and submodule pull
 
 [color]
 

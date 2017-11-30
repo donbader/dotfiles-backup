@@ -52,9 +52,13 @@
 
   // Terminal related
   {
+    "key": "shift+cmd+c",
+    "command": "workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
     "key": "cmd+m",
-    "command": "workbench.action.toggleMaximizedPanel",
-    "when": "terminalFocus"
+    "command": "workbench.action.toggleMaximizedPanel"
   },
   {
     "key": "ctrl+`",
