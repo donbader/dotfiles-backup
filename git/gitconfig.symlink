@@ -7,43 +7,34 @@
 [alias]
 
   ### TODO: frequently use
-  ds = diff --cached
+  ds = !"tig status"
 
   # History
   l = log --graph --abbrev-commit --date=relative --all --format='%C(red)%h -%C(yellow)%d %C(auto)%s %C(blue)%an %C(green)(%ad)'
-	s = status -s
+  s = status -s
+  lf = !"$(git-fshow)" 
 
   # commit
-  cm = commit -av
+  cm = commit -v
   co = checkout
   camd = commit --amend
   # Add all and commit
   ca = !"git add -A && git commit -av"
 
   # branch related
-  b = !"git checkout $(git branch | fzf)"
+  b = !"f() { git checkout ${1:-$(git branch | fzf)}; }; f"
   b-remote = !"git checkout --track $(git branch -r | fzf)"
   cb = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
   branch-name = "!git rev-parse --abbrev-ref HEAD"
-  d-branch = !"f() { name=${1:-$(git branch-name)}; git checkout ${2:-master}; git branch -D $name; }; f"
+  d-branch-and-checkout = !"f() { name=$(git branch-name)}; git checkout ${1:-master}; git branch -D $name; }; f"
   publish = "!git push -u origin $(git branch-name)"
 	unpublish = "!git push origin :$(git branch-name)"
 
   # Advanced git control
-	rb = !"f() { git rebase -i HEAD~$1; }; f"
+	rb = !"f() { git stash; git rebase -i HEAD~$1; git stash pop; }; f"
   unstage = reset HEAD
   break-last-to-unstage = !"git reset --soft HEAD~1 && git reset HEAD"
-  # !Haven't test yet
-  ; insert-after = !"f() { \
-    ; name=$(git branch-name); \
-    ; git checkout -b temp $2; \
-    ; git cherry-pick $1; \
-    ; git rebase temp $name; \
-    ; git checkout $name; \
-    ; git branch -D $2; \
-    ; }; f"
-
-  recover = !"f() { git reset --hard $1}; f"
+  recover = !"f() { git reset --hard $1;}; f"
 
   ### Pull 
   # pull-rebase
