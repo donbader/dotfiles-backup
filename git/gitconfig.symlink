@@ -5,75 +5,50 @@
     helper = osxkeychain
 
 [alias]
-	# https://gist.github.com/robmiller/6018582
-	branch-name = "!git rev-parse --abbrev-ref HEAD"
-	publish = "!git push -u origin $(git branch-name)"
-	unpublish = "!git push origin :$(git branch-name)"
-	recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
-	rebase-branch = "!git rebase -i `git merge-base master HEAD`"
-	unstage = reset HEAD
-	diffc = diff --cached
-
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-  l = log --graph --abbrev-commit --date=relative --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s - %Cblue%an%Creset %Cgreen(%ad)%Creset'
-
-	# View the current working tree status using the short format
-	s = status -s
-
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-	# Pull in remote changes for the current repository and all its submodules
-	p = !"git pull; git submodule foreach git pull origin master"
-
-	# rebase from HEAD~{num}
-	rb = !"sh -c \"git rebase -i HEAD~$1\" -"
-
-	# commmit -m
-	cm = commit -m
-
-	# modify last commit
-	camd = commit --amend
-
-	# Clone a repository including all submodules
-	cl = clone --recursive
-
-	# Commit all changes
-	ca = !"git add -A && git commit -av"
-
-	# List aliases
-	aliases = config --get-regexp alias
-
-	# check diff before adding to stage
-	patch = add -p
-
-	# checkout
-	co = checkout
-
-	# checkout and delete current branch
-	codc = !"f() { name=$(git branch-name) &&  git checkout $1 2>/dev/null && git branch -D $name; }; f"
-
-	# Branch related
-  b = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
 
   ### TODO: frequently use
+  ds = diff --cached
+
+  # History
+  l = log --graph --abbrev-commit --date=relative --all --format='%C(red)%h -%C(yellow)%d %C(auto)%s %C(blue)%an %C(green)(%ad)'
+	s = status -s
+
   # commit
-  # add-all and commit
-  # unstage
-  # break commit to unstage
-  # cherry-pick
-  # insert commit to...
-  # rebase -i
-  ### Branch
-  # push -u origin $branchname
-  # codc ... => checkout previous branch (for using remote branch as local)
-  # checkout the branch or create a new one
-  # branch-name
-  # delete the remote branch
-  # recover to the reflog commit
+  cm = commit -av
+  co = checkout
+  camd = commit --amend
+  # Add all and commit
+  ca = !"git add -A && git commit -av"
+
+  # branch related
+  b = !"git checkout $(git branch | fzf)"
+  b-remote = !"git checkout --track $(git branch -r | fzf)"
+  cb = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
+  d-branch = !"f() { name=${$1:$(git branch-name)}; echo $name; }; f"
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+  publish = "!git push -u origin $(git branch-name)"
+	unpublish = "!git push origin :$(git branch-name)"
+
+  # Advanced git control
+	rb = "!git rebase -i `git merge-base master HEAD`"
+  unstage = reset HEAD
+  break-last-to-unstage = !"git reset --soft HEAD~1 && git reset HEAD"
+  insert-after = !"f() { \
+    name=$(git branch-name); \
+    git checkout -b temp $2; \
+    git cherry-pick $1; \
+    git rebase temp $name; \
+    git checkout $name; \
+    git branch -D $2; \
+    }; f"
+
+  recover = !"f() { git reset --hard $1}; f"
+
   ### Pull 
   # pull-rebase
-  # pull-all for pull and submodule pull
+  pr = pull --rebase
+  # pull all including submodule
+	pa = !"git pull; git submodule foreach git pull origin master"
 
 [color]
 

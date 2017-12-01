@@ -59,3 +59,25 @@ alias reloadrc='source ~/.zshrc'
 
 # vscode = code
 alias vscode='code'
+
+
+git-fshow() {
+	local g=(
+		git log
+		--graph
+    --format='%C(red)%h -%C(yellow)%d %C(auto)%s %C(blue)%an %C(green)(%ad)'
+		--color=always
+		"$@"
+	)
+
+	local fzf=(
+		fzf
+		--ansi
+		--reverse
+		--tiebreak=index
+		--no-sort
+		--bind=ctrl-s:toggle-sort
+		--preview 'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1; }; f {}'
+	)
+	$g | $fzf
+}
