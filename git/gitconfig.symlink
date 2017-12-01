@@ -24,23 +24,24 @@
   b = !"git checkout $(git branch | fzf)"
   b-remote = !"git checkout --track $(git branch -r | fzf)"
   cb = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
-  d-branch = !"f() { name=${$1:$(git branch-name)}; echo $name; }; f"
   branch-name = "!git rev-parse --abbrev-ref HEAD"
+  d-branch = !"f() { name=${1:-$(git branch-name)}; git checkout ${2:-master}; git branch -D $name; }; f"
   publish = "!git push -u origin $(git branch-name)"
 	unpublish = "!git push origin :$(git branch-name)"
 
   # Advanced git control
-	rb = "!git rebase -i `git merge-base master HEAD`"
+	rb = !"f() { git rebase -i HEAD~$1; }; f"
   unstage = reset HEAD
   break-last-to-unstage = !"git reset --soft HEAD~1 && git reset HEAD"
-  insert-after = !"f() { \
-    name=$(git branch-name); \
-    git checkout -b temp $2; \
-    git cherry-pick $1; \
-    git rebase temp $name; \
-    git checkout $name; \
-    git branch -D $2; \
-    }; f"
+  # !Haven't test yet
+  ; insert-after = !"f() { \
+    ; name=$(git branch-name); \
+    ; git checkout -b temp $2; \
+    ; git cherry-pick $1; \
+    ; git rebase temp $name; \
+    ; git checkout $name; \
+    ; git branch -D $2; \
+    ; }; f"
 
   recover = !"f() { git reset --hard $1}; f"
 
