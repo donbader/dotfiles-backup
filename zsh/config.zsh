@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 
 # FZF search includes hidden files
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
-
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border --inline-info'
 
 # Welcome Message
 RED='\033[0;31m'

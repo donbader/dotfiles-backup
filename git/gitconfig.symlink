@@ -22,7 +22,7 @@
   ca = !"git add -A && git commit -av"
 
   # branch related
-  b = !"f() { git checkout ${1:-$(git branch | fzf)}; }; f"
+  b = !"f() { branch=${1:-$(git branch | fzf)}; if [ ! -z $branch ]; then git checkout $branch;fi; }; f"
   b-remote = !"git checkout --track $(git branch -r | fzf)"
   cb = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
   branch-name = "!git rev-parse --abbrev-ref HEAD"
