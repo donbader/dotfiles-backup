@@ -19,7 +19,7 @@
     "[ruby]": {
         "editor.tabSize": 2
     },
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {

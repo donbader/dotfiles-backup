@@ -12,7 +12,6 @@
   # History
   l = log --graph --abbrev-commit --date=relative --all --format='%C(red)%h -%C(yellow)%d %C(auto)%s %C(blue)%an %C(green)(%ad)'
   s = status -s
-  lf = !"$(git-fshow)" 
 
   # commit
   cm = commit -v
@@ -26,12 +25,12 @@
   b-remote = !"git checkout --track $(git branch -r | fzf)"
   cb = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
   branch-name = "!git rev-parse --abbrev-ref HEAD"
-  d-branch-and-checkout = !"f() { name=$(git branch-name)}; git checkout ${1:-master}; git branch -D $name; }; f"
+  d-branch-and-checkout = !"f() { name=$(git branch-name); git checkout ${1:-master}; git branch -D $name; }; f"
   publish = "!git push -u origin $(git branch-name)"
 	unpublish = "!git push origin :$(git branch-name)"
 
   # Advanced git control
-	rb = !"f() { git stash; git rebase -i HEAD~$1; git stash pop; }; f"
+  rb = !"f() { git stash; git rebase -i HEAD~${1:-2}; git stash pop; }; f"
   unstage = reset HEAD
   break-last-to-unstage = !"git reset --soft HEAD~1 && git reset HEAD"
   recover = !"f() { git reset --hard $1;}; f"
@@ -40,7 +39,10 @@
   # pull-rebase
   pr = pull --rebase
   # pull all including submodule
-	pa = !"git pull; git submodule foreach git pull origin master"
+  pa = !"git pull; git submodule foreach git pull origin master"
+
+  # use theirs
+  use-theirs = !"f(){ git checkout --ours $1; git add $1; }; f"
 
 [color]
 

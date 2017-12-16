@@ -18,11 +18,9 @@
 		"prefix": "docstring",
 		"body": [
 			"# ${1:Description}",
-			"#= Params:",
-			"#== [${2:param1}] ${3: param1_description}",
 			"#",
-			"#= Returns:",
-			"#== [${4:return}] ${5:return_description}"
+			"# @param [${2:Type}] ${3:Name}: ${4:Description}",
+			"# @return [${5:Type}] ${6:Description}"
 		]
 	}
 }

@@ -14,3 +14,9 @@ Thumbs.db
 *.swp
 
 .env
+
+# VSCode Workspace settings
+.vscode
+
+# My Notes
+_corey_*

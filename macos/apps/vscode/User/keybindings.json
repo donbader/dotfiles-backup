@@ -1,9 +1,25 @@
 // Place your key bindings in this file to overwrite the defaults
-[{
-    "key": "cmd+enter",
-    "command": "workbench.action.toggleFullScreen"
+[
+  {
+    "key": "cmd+j",
+    "command": "editor.action.joinLines"
   },
-
+  {
+    "key": "ctrl+shift+,",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+shift+.",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+shift+[",
+    "command": "scrollLineUp"
+  },
+  {
+    "key": "ctrl+shift+]",
+    "command": "scrollLineDown"
+  },
   // Windows Navigation
   {
     "key": "ctrl+h",
@@ -49,6 +65,11 @@
     "command": "undo_expand_region",
     "when": "editorTextFocus && editorHasSelection"
   },
+  {
+    "key": "cmd+m",
+    "command": "workbench.action.toggleFullScreen",
+    "when": "!terminalFocus"
+  },
 
   // Terminal related
   {
@@ -58,7 +79,8 @@
   },
   {
     "key": "cmd+m",
-    "command": "workbench.action.toggleMaximizedPanel"
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
   },
   {
     "key": "ctrl+`",

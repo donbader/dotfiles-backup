@@ -60,6 +60,10 @@ alias reloadrc='source ~/.zshrc'
 # vscode = code
 alias vscode='code'
 
+# Rails
+alias rails-reset-db='bundle exec rake db:drop db:create db:schema:load db:migrate'
+alias rails-rbm='bundle exec rake db:rollback db:migrate'
+
 
 glf() {
 	local g=(
