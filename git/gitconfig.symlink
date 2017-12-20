@@ -22,7 +22,7 @@
 
   # branch related
   b = !"f() { branch=${1:-$(git branch | fzf)}; if [ ! -z $branch ]; then git checkout $branch;fi; }; f"
-  b-remote = !"git checkout --track $(git branch -r | fzf)"
+  b-remote = !"f() { branch=${1:-$(git branch -r | fzf)}; if [ ! -z $branch ]; then git checkout --track $branch;fi; }; f"
   cb = "!f() { git checkout $1 2>/dev/null || git checkout -b $1;  }; f"
   branch-name = "!git rev-parse --abbrev-ref HEAD"
   d-branch-and-checkout = !"f() { name=$(git branch-name); git checkout ${1:-master}; git branch -D $name; }; f"
