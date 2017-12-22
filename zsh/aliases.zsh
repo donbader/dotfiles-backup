@@ -26,7 +26,8 @@ alias vim='/usr/local/bin/nvim'
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | \
+awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
@@ -61,7 +62,7 @@ alias reloadrc='source ~/.zshrc'
 alias vscode='code'
 
 # Rails
-alias rails-reset-db='bundle exec rake db:drop db:create db:schema:load db:migrate'
+alias rails-reset-db='bundle exec rake db:drop db:setup db:migrate'
 alias rails-rbm='bundle exec rake db:rollback db:migrate'
 
 
