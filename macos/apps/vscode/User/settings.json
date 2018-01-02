@@ -20,7 +20,6 @@
         "editor.tabSize": 2
     },
     "window.zoomLevel": 0,
-    "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
         "statusBar.background": "#005f87",
