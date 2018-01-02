@@ -70,7 +70,6 @@ set scrolloff=7
 set confirm
 set relativenumber
 set lazyredraw
-set synmaxcol=128
 syntax sync minlines=256
 " For GUI Font
 " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h12
