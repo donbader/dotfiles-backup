@@ -130,5 +130,11 @@
     "key": "cmd+t",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
+  },
+
+  // Tasks
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.tasks.runTask"
   }
 ]
