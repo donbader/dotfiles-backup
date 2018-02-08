@@ -1,6 +1,6 @@
 
 home=/Users/corey
-source=/Volumes/Data\ HD
+source=/Volumes/DataHD
 folders=(Inbox Downloads Pictures Movies Musics Documents bin Cellar)
 
 echo "This script will delete the following folders:"
