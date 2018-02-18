@@ -65,6 +65,10 @@ alias vscode='code'
 alias rails-reset-db='bundle exec rake db:drop db:setup db:migrate'
 alias rails-rbm='bundle exec rake db:rollback db:migrate'
 
+# Coinmon
+alias coin='coinmon -c sgd -p' # My balances
+alias cointop='coinmon -t 20' # Top 20 rank coins
+alias coinedit='vim ~/.Coinmon/portfolio.json'
 
 glf() {
 	local g=(
