@@ -19,7 +19,7 @@
     "[ruby]": {
         "editor.tabSize": 2
     },
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
         "statusBar.background": "#005f87",
