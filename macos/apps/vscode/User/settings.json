@@ -19,6 +19,9 @@
     "[ruby]": {
         "editor.tabSize": 2
     },
+    "[haml]": {
+        "editor.tabSize": 2
+    },
     "window.zoomLevel": 1,
     "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
@@ -38,114 +41,11 @@
 
 
     // Emmet
-    "emmet.extensionsPath": "/Users/corey/dotfiles/macos/apps/vscode/snippets",
+    "emmet.extensionsPath": "~/dotfiles/macos/apps/vscode/User/snippets",
     "emmet.includeLanguages": {
         "erb": "html"
     },
 
-    // Vim Settings
-    "vim.leader": "<space>",
-    "vim.disableAnnoyingNeovimMessage": true,
-    "vim.autoindent": true,
-    "vim.enableNeovim": true,
-    "vim.neovimPath": "/usr/local/bin/nvim",
-    "vim.easymotion": false,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.overrideCopy": true,
-    "vim.substituteGlobalFlag": true,
-    "vim.cmdLineInitialColon": true,
-    "vim.visualstar": true,
-    "vim.searchHighlightColor": "rgba(255, 1, 81, 0.3)",
-    "vim.statusBarColorControl": true,
-    // These will cause Code Helper to dominate CPU
-    // "vim.statusBarColors": {
-    //     "normal": "#005f5f",
-    //     "insert": "#5f0000",
-    //     "visual": "#5f00af",
-    //     "visualline": "#005f87",
-    //     "visualblock": "#86592d",
-    //     "replace": "#000000"
-    // },
-    "vim.insertModeKeyBindingsNonRecursive": [{
-        "before": ["j", "j"],
-        "after": ["<Esc>", "j"]
-    }],
-    "vim.otherModesKeyBindingsNonRecursive": [{
-            "before": ["<leader>", "w"],
-            "after": [],
-            "commands": [{
-                "command": "workbench.action.files.save",
-                "args": []
-            }]
-        },
-        {
-            "before": ["<leader>", "q"],
-            "after": [],
-            "commands": [{
-                "command": "workbench.action.closeActiveEditor",
-                "args": []
-            }]
-        },
-        {
-            "before": ["u"],
-            "after": [],
-            "commands": [{
-                "command": "undo",
-                "args": []
-            }]
-        },
-        {
-            "before": ["U"],
-            "after": [],
-            "commands": [{
-                "command": "redo",
-                "args": []
-            }]
-        },
-        {
-            "before": ["z"],
-            "after": [],
-            "commands": [{
-                "command": ":noh"
-            }]
-        },
-        {
-            "before": ["Z", "Z"],
-            "after": [],
-            "commands": [{
-                    "command": "workbench.action.files.save",
-                    "args": []
-                },
-                {
-                    "command": "workbench.action.closeActiveEditor",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<BS>"],
-            "after": ["d", "h"]
-        },
-        {
-            "before": [";"],
-            "after": [],
-            "commands": [{
-                "command": "editor.action.commentLine",
-                "args": []
-            }]
-        },
-        {
-            "before": ["j"],
-            "after": ["g", "j"]
-        },
-        {
-            "before": ["k"],
-            "after": ["g", "k"]
-        }
-    ],
     "files.eol": "\n",
     "[markdown]": {
         "editor.quickSuggestions": true
@@ -172,5 +72,24 @@
         "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
     },
-    "search.useIgnoreFiles": false
-}
+    "search.useIgnoreFiles": false,
+    "alignment.surroundSpace": {
+        "colon": [
+            -1,
+            3
+        ],
+        "assignment": [
+            1,
+            1
+        ],
+        "arrow": [
+            1,
+            1
+        ],
+        "comment": 2
+    },
+    "powermode.enabled": true,
+    "powermode.explosionSize": 10,
+    "powermode.shakeIntensity": 1,
+    "gitlens.keymap": "alternate"
+}}
