@@ -7,7 +7,5 @@ export PATH=~/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 # go
-GOPATH=~/Documents/git/go
-mkdir -p $GOPATH
-export GOPATH
+export GOPATH=~/Documents/git/go
 
