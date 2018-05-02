@@ -8,4 +8,5 @@ export PATH=~/bin:$PATH
 
 # go
 export GOPATH=~/Documents/git/go
+export PATH=$GOPATH/bin:$PATH
 
