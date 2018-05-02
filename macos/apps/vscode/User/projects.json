@@ -10,5 +10,11 @@
 		"rootPath": "$home/dotfiles",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Xfers-doc",
+		"rootPath": "$home/Documents/Xfers-doc",
+		"paths": [],
+		"group": ""
 	}
 ]
